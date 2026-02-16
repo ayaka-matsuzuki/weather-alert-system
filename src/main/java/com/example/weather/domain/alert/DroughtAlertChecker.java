@@ -6,11 +6,16 @@ import java.util.Optional;
 
 public class DroughtAlertChecker implements AlertChecker<RainfallPeriod> {
 
-    private static final double THRESHOLD_MM = 10.0;
+    private final double thresholdMm;
+
+    public DroughtAlertChecker(double thresholdMm) {
+        this.thresholdMm = thresholdMm;
+    }
+
 
     @Override
     public Optional<Alert> check(RainfallPeriod period) {
-        if (period.getTotalAmountMm() <= THRESHOLD_MM) {
+        if (period.getTotalAmountMm() <= thresholdMm) {
             return Optional.of(
                     new Alert(
                             AlertType.DROUGHT,

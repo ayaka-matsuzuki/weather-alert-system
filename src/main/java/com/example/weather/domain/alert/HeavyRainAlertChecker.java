@@ -6,11 +6,15 @@ import java.util.Optional;
 
 public class HeavyRainAlertChecker implements AlertChecker<DailyRainfall> {
 
-    private static final double THRESHOLD_MM = 100.0;
+    private final double thresholdMm;
+
+    public HeavyRainAlertChecker(double thresholdMm) {
+        this.thresholdMm = thresholdMm;
+    }
 
     @Override
     public Optional<Alert> check(DailyRainfall rainfall) {
-        if (rainfall.getAmountMm() >= THRESHOLD_MM) {
+        if (rainfall.getAmountMm() >= thresholdMm) {
             return Optional.of(
                     new Alert(
                             AlertType.HEAVY_RAIN,
