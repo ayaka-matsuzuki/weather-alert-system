@@ -1,2 +1,10 @@
+com\example\weather\domain\alert\AlertType.class
+com\example\weather\domain\alert\DroughtAlertChecker.class
+com\example\weather\infrastructure\jma\JmaRainfallFetcher.class
+com\example\weather\domain\alert\HeavyRainAlertChecker.class
+com\example\weather\application\WeatherAlertApplication.class
+com\example\weather\domain\alert\Alert.class
+com\example\weather\application\AlertThresholds.class
+com\example\weather\domain\alert\AlertChecker.class
 com\example\weather\domain\rainfall\DailyRainfall.class
 com\example\weather\domain\rainfall\RainfallPeriod.class
